@@ -4,3 +4,7 @@
     - name: Copy file
       debug: 
         msg: "echo saludos"
+    - name: Creates directory
+      file:
+        path: /awx
+        state: directory
