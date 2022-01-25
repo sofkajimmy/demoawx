@@ -1,9 +1,15 @@
 - name: copy file
   hosts: all
   tasks:
-    - name: Copy file
+    - name: init
       debug: 
-        msg: "echo saludos"
+        msg: "hostnamectl"
+    - name: Creating a file with content
+      copy:
+        dest: "/tmp/data.txt"
+        content: |
+          line 01 demo
+          line 02 test
     - name: Creating an empty file
       file:
         path: "/tmp/test.txt"
